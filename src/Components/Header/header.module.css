@@ -1,0 +1,487 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 60px;
+    line-height: 12px;
+    justify-content: space-between;
+    font-family: "Noto Sans KR",sans-serif !important;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.header a {
+    text-decoration: none;
+    color:white;
+}
+
+.leftSection{
+    display: flex;
+    height: 60px;
+    text-size-adjust: 100%;
+    width: 281px;
+    /* border:solid white 1px ; */
+}
+
+.logoContainer{
+    display: flex;
+    height: 60px;
+    margin-left: 11px;
+    padding: 1px 0 0 0;
+    width: 129px;
+}
+
+.logoBox{
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    height: 50px;
+    margin: 1px 8px 6px 0;
+    border: solid transparent 1px;
+    width: 129px;
+    /* align-items: center;/ */
+}
+
+.header_logo{
+    width: 100px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.location_container{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 137px;
+    height: 50px;
+    margin: 0px 0 0 -5px;
+    padding-bottom: 0px;
+    padding-left: 2px;
+    border: solid transparent 1px;
+}
+
+.userInfoBox{
+    width: 110px;
+}
+
+.deliveryLocation{
+    color: white;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 16px;
+    line-height: 16px;
+    padding-bottom: 1px;
+    padding-right: 8px;
+    text-wrap: nowrap;
+    width: 102px;
+    margin-top: 2px;
+}
+.deliverTo{
+    color: rgb(204, 204, 204);
+    display: flex;
+    font-size: 12px;
+    font-weight: 400;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 8px;
+    padding-right: 0px;
+    text-wrap: nowrap;
+    width: 102px;
+
+}
+.searchBar{
+    max-width: 835px;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin:0 10px;
+    border-radius: 4px;
+}
+
+.searchInput{
+    display: flex;
+    height: 40px;
+    line-height: 15px;
+    padding: 7px 10px 10px 0;
+    text-align: start;
+    text-indent: 8px;
+    outline: none;
+    text-wrap: nowrap;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    font-stretch: 100%;
+    border: none;
+}
+
+/* .searchInput:focus{
+    border: none;
+    box-shadow: 0 0 1px 1.5px #ff950b;
+} */
+
+
+.searchBar svg {
+    padding: 7px;
+    background: #febd69;
+    color: #1a1a1a;
+}
+
+.searchBar svg:hover {
+    background:  #ffaa0b;
+}
+.searchBar svg:focus {
+    background:  #ffaa0b; 
+    box-shadow: 0 0 1px 2.5px #ff950b;
+}
+
+.rightSection{
+    display: flex;
+    height: 60px;
+    margin-top: 2px;
+    padding: 3px 0 0 0;
+    /* width: 383px; */
+    align-items: center;
+}
+
+.flagImg{
+    align-items: center;
+    width: 20px;
+    height: 15px;
+    display: flex;
+    margin: 0 2px 1px 0;
+}
+
+.languageCode{
+    align-items: center;
+    line-height: 15px;
+    height: 15px;
+    margin: 0 0 0 2px;
+    width: 18px;
+    
+}
+
+
+
+.accountContainer{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 50px;
+    justify-content: center;
+    margin: 0 2px;
+    /* padding: 0 33px 10px 33px; */
+    border: solid transparent 1px;
+    max-width: 450px;
+}
+
+.blockOne{
+    display: flex;
+    align-items: center;
+    color: rgb(255,255,255);
+    height: 14px;
+    font-weight: 400;
+    padding: 0 1px;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    width: 113px;
+}
+
+.blockTwo{
+    color: rgb(255,255,255);
+    display: flex;
+    font-size: 14px;
+    height: 15px;
+    text-wrap: nowrap;
+    width: 113px;
+    font-weight: 7000;
+}
+
+.ordersContainer{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 50px;
+    justify-content: center;
+    padding-left: 20px;
+    border: solid transparent 1px ;
+    max-width: 450px;
+}
+
+.cartContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    font-size: 14px;
+    height: 50px;
+    border: solid transparent 1px;
+    align-items: center;
+    margin: 10px 11px 10px 0px;
+    padding: 0 10px 11px 9px;
+    max-width: 450px;
+}
+
+.cartContent{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    flex-wrap: nowrap;
+    height: 20px;
+    position: relative;
+    width: 38px;
+    margin: 0;
+    padding-bottom: 1px;
+}
+
+.cartCount{
+   display: flex;
+   position: absolute;
+   left: 13px;
+   font-size: 16px;
+   font-weight: 700;
+   margin: 0;
+   padding: 0;
+   width: 19px;
+   top: 0px;
+   right: 6px;
+   color: rgb(240,136,4);
+}
+
+.cartIcon {
+    background-image: url("https://m.media-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-reorg-privacy._CB587940754_.png");
+    background-position-x: -15px;
+    background-position-y: -340px;
+    background-size: 350px;
+    height: 26px;
+    width: 38px;
+    margin: 1px 0 0 0;
+    padding: 0;
+}
+
+.cartTextContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 53px;
+    width: 28px;
+    justify-content: flex-end;  
+}
+
+.cartText{
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    height: 22px;
+    text-wrap: nowrap;
+    width: 28px;
+}
+
+.location_container:hover,
+.logoBox:hover,
+.cartContainer:hover,
+.ordersContainer:hover,
+.accountContainer:hover{
+    border: solid white 1px;
+
+}
+
+
+/*  language drop down list css*/
+
+.learnMore{
+    font-size: 11px;
+    font-weight: 400;
+    color: blue;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+}
+
+.region{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 13px;
+
+}
+
+.arrowPoint{
+    position: absolute;
+    top: -6px;
+    left: 54px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    display: block;
+    rotate: 45deg;
+
+}
+
+/* Lower Header css */
+
+
+.navbar_panel{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(35,47,62);
+    margin-top: 60px;
+    padding-left: 11px;
+    font-family: sans-serif !important;
+    color: white;
+}
+
+.panel_content{
+    display: flex;
+    flex-direction: row;
+    width: 1450px;
+}
+
+.panelText{
+    margin-top: 5px;
+    margin-bottom: 6px;
+    padding: 8px 9px;
+    text-wrap: nowrap;
+    font-size: 14px;
+    line-height: 12px;
+}
+
+.panelText:hover{
+    border: solid white 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 12px 8px;
+    cursor: pointer;
+}
+
+.menuIcon{
+    background-image: url("https://m.media-amazon.com/images/G/31/gno/sprites/nav-sprite-global-2x-reorg-privacy._CB600086755_.png");
+    background-position-x: -172px;
+    background-position-y: -255px;
+    background-size:350px;
+    display:flex;
+    height:14px;
+    width:18px;
+    text-size-adjust:100%;
+
+}
+
+.menuText{
+    width:23px;
+    height:12px;
+    padding-left:5px;
+    line-height:12px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.menuProfile{
+    width:100%;
+    height:50px;
+    background-color:rgb(35,47,62);
+    display:flex;
+    align-items:center;
+    position:absolute;
+    color:white;
+}
+
+.userIcon{
+    background-image:url("https://m.media-amazon.com/images/G/31/gno/sprites/nav-sprite-global-2x-reorg-privacy._CB600086755_.png");
+    background-position-x: -137px;
+    background-position-y: -340px;
+    background-size:350px;
+    height:25px;
+    width:27px;
+    margin-left:36px;
+    margin-right:10px;  
+}
+
+.userName{
+    font-weight:700;
+    font-size:19px;
+    cursor: pointer;
+}
+
+li{
+    list-style-type:none;
+}
+
+.menuContainer{
+    display:block;
+    overflow-y:scroll;
+    padding-left:7px;
+    line-height:16px;
+    text-wrap:nowrap;
+    margin-top:50px;
+}
+
+.menuSection{
+    margin:0;
+    padding:0;
+
+}
+
+.heading{
+    font-size:18px;
+    font-weight:700;
+    padding:13px 20px 13px 36px;
+    width:131px;
+}
+
+.menuContent{
+    display:flex;
+    align-items:flex-start;
+    padding:13px 20px 13px 36px;
+    font-weight:400;
+}
+
+.menuContent:hover{
+    background-color:rgb(229,229,229);
+    cursor:pointer;
+}
+
+/* media query */
+
+
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+      height: auto; 
+    }
+  
+    .leftSection {
+      width: 100%; 
+    }
+  
+    .searchBar {
+      width: 100%; 
+      margin: 10px 0; 
+    }
+  
+    .rightSection {
+      width: 100%; 
+      justify-content: center; 
+    }
+    .navbar_panel {
+        margin-top: 198px; 
+    }
+    .panel_content{
+        display: none;
+    }
+    
+  }
+  
+
+ 

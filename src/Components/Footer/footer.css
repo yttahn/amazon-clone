@@ -1,0 +1,87 @@
+.infoBlocks{
+    display: flex;
+    height: 100%;
+    text-align: left;
+    padding: 0 10px;
+    color: #ddd;
+}
+
+.footerDropDown{
+    margin-left: 70px;
+    
+}
+
+.footerDropDownBtn{
+    display: flex;
+    align-items: center;
+    border: solid rgb(132,134,136) 0.8px;
+    border-radius: 3px;
+    padding: 6px 8px 6px 8px;
+}
+
+.footerDropDownBtn::after{
+    display: none;
+}
+
+.footerDropDown:hover > .dropdown-menu{
+    display: block;
+    border-radius: 3px;
+    width: 230px;
+    height: 260px;
+    margin-top: -5px;
+}
+
+.footerDropDown .dropdown-item{
+    margin-top: 8px;
+}
+
+.footerDropDown .dropdown-item:hover{
+    color: #f08804;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.footerDropDown .learnMore{
+    font-size: 11px;
+    font-weight: 400;
+    color: blue;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+}
+
+.footerDropDown .region{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 13px;
+
+}
+
+
+.footerDropDown .dropdown-item:hover > .checkmark::after{
+    display: block;
+    background-color: rgb(251,119,24);
+    opacity: 0.6;
+}
+
+.footerDropDown .arrowPoint{
+    position: absolute;
+    top: -6px;
+    left: 95px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    display: block;
+    rotate: 45deg;
+
+}
+
+
+.footerDropDown hr{
+    color: gray;
+    width: 200px;
+    margin-top: 6px;
+    margin-left: 28px;
+}

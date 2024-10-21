@@ -1,0 +1,217 @@
+.navbar {
+    background-color: #131921;
+    color: white;
+    height: 60px;
+    display: flex;
+    flex: 1;
+
+}
+
+.categories-dropDown .btn{
+    align-items: center;
+    background-color: rgb(238, 234, 234);
+    color: rgb(100, 100, 100);
+    font-size: 12px;
+    height: 40px;
+    font-weight: 400;
+    /* width: 50px; */
+    margin-right: 0;
+    border-right: solid 0.8px rgb(205, 205, 205) ;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 0 10px;
+
+}
+
+.categories-dropDown .btn::after{
+    font-size: 15px;
+    vertical-align: 3px;
+    margin-left: 10px;
+}
+
+.categories-dropDown .btn:hover{
+    background-color: rgb(211, 211, 211);
+    color: rgb(18, 18, 18);
+}
+
+.categories-dropDown .btn.show,
+.categories-dropDown .btn:focus{
+    box-shadow: 0 0 1px 2.5px #ffab3d ;
+    background-color: rgb(211, 211, 211);
+    color: rgb(18, 18, 18);
+    border-color: orange;
+}
+
+.categories-dropDown .dropdown-item:hover{
+    background-color: lightblue;
+    color: black;
+
+}
+.categories-dropDown .dropdown-menu {
+    position: absolute;
+    background-color: grey;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    padding: .5rem 0;
+}
+
+/* right section */
+
+.languageDropDown .languageBtn{
+    align-items: center;
+    display: flex;
+    color: rgb(255,255,255);
+    font-size: 14px;
+    border: none;
+    font-weight: 700;
+    height: 20px;
+    margin: 0 0 0 1px;
+    width: 73px;
+}
+
+.languageBtn::after{
+    width: 8px;
+    margin: 6px 0 0 2px;
+    color: rgb(185,185,185);
+
+}
+
+
+.LanguageContainer{
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 50px;
+    /* width: 7px; */
+    justify-content: center;
+    margin: 0 0 0 1px;
+    padding: 10px 20px 5px 9px;
+    border: solid transparent 1px;
+    align-items: center;
+}
+
+.LanguageContainer:hover{
+    border: solid white 1px;
+
+}
+
+.LanguageContainer:hover .language-dropDown > .dropdown-menu{
+    display: block;
+    border-radius: 3px;
+    width: 230px;
+    height: 230px;
+    margin-top: 8px;
+    margin-left: -12px;
+}
+
+.language-dropDown .dropdown-item{
+    margin-top: 8px;
+}
+
+.language-dropDown .dropdown-item:hover{
+    color: #f08804;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.radio-btn{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.radio-btn input{
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    left: 13px;
+    top: 5px;
+}
+
+
+/* .checkmark{
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    height: 10px;
+    width: 10px;
+    background-color: #ffffff;
+    border: 1px slid rgb(148,148,148);
+    border-radius: 9px;
+}
+
+.radio-btn input:checked ~ .checkmark{
+    background-color: white;
+}
+
+.checkmark::after{
+    content: "";
+    position: absolute;
+    display: none;
+} */
+
+.radio-btn input:checked ~ .checkmark::after{
+    display: block;
+    background-color: rgb(236,185,11);
+}
+
+.radio-btn .checkmark::after{
+    left: 4px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.txt{
+    display: block;
+    font-size: 13px;
+    color: #444;
+    font-weight: 400;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 16px;
+    padding-left: 38px;
+    height: 30px;
+}
+
+hr{
+    color: gray;
+    width: 200px;
+    margin-top: 6px;
+    margin-left: 28px;
+}
+
+
+/* css for lower header */
+
+.allMenu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 58px;
+    height: 39px;
+    padding: 8px 9px;
+    border-radius: 0;
+    color: white;
+}
+
+.allMenu:hover{
+    border: solid white 1px;
+}
+.offcanvas{
+    --bs-offcanvas-width:365px;
+}
+
+.btn-close{
+    position:absolute;
+    top:16px;
+    left:376px;
+    filter:invert(1);
+    opacity:1;
+    font-size:18px;
+}
