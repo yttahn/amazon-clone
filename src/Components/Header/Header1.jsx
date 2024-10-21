@@ -121,229 +121,238 @@ const [selectedLanguage, setSelectedLanguage] = useState(
   }, []);
 
 
-  return (
-    <>
-  <div className={classes.header}>
-  
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
+return (
+  <>
+    <div className={classes.header}>
+      <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid">
           <div className={classes.leftSection}>
             <div className={classes.logoContainer}>
               {/* amazon logo */}
               <div className={classes.logoBox}>
                 <Link to="/">
                   <img 
-                  className={classes.header_logo}
-                  src={amazonLogo} alt="amazonLogo" />
+                    className={classes.header_logo}
+                    src={amazonLogo} alt="amazonLogo" 
+                  />
                 </Link> 
               </div>
             </div>
 
             {/* Location */}
             <div className={classes.location_container}>
-                <div className={classes.location_Icon}>
-                  <SlLocationPin 
-                  style={{marginTop:"23px"}}/>
+              <div className={classes.location_Icon}>
+                <SlLocationPin style={{ marginTop: "23px" }} />
+              </div>
+              <div className={classes.userInfoBox}>
+                <span className={classes.deliverTo}>
+                  {t("header.deliverTo")}
+                  <p style={{ fontWeight: "bold", paddingRight: "4px" }}>
+                    {user?.email?.split("@")[0]}
+                  </p>
+                </span>
+                <span className={classes.deliveryLocation}>
+                  {location}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Search Bar */}
+          <div className={classes.searchBar} style={{ boxShadow: boxShadow }}>
+            <div className="dropdown categories-dropDown">
+              <button 
+                className="btn dropdown-toggle" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+              >
+                {selectedItem} &nbsp;
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <a className="dropdown-item" href="#" onClick={() => handleDropDownClick("All")}>
+                    All
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#" onClick={() => handleDropDownClick("Alexa ")}>
+                    {t("header.Alexa")}
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#" onClick={() => handleDropDownClick("Amazon Clinic")}>
+                    {t("header.Amazon Clinic")}
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#" onClick={() => handleDropDownClick("Amazon Devices")}>
+                    {t("header.amazonDevices")}
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#" onClick={() => handleDropDownClick("Beauty & Personal Care")}>
+                    {t("header.Beauty & Personal Care")}
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#" onClick={() => handleDropDownClick("Clothing")}>
+                    {t("header.Clothing")}
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Search Bar Input */}
+            <input 
+              className={classes.searchInput}
+              type="text"
+              name="id"
+              placeholder="Search Amazon"
+              onClick={handleClick}
+              ref={inputRef} 
+            />
+            <BsSearch size={40} />
+          </div>
+
+          {/* Right Section */}
+          <div className={classes.rightSection}>
+            {/* Language Container */}
+            <div className="LanguageContainer">
+              <div className="languageDropDown">
+                <div className="language-dropDown language">
+                  <button 
+                    className="btn dropdown-toggle languageBtn" 
+                    type="button" 
+                    aria-expanded="false"
+                  >
+                    <img 
+                      className={classes.flagImg}
+                      src={flag} 
+                      alt="flag" 
+                    />
+                    <span className={classes.languageCode}>
+                      {selectedLanguage}
+                    </span>
+                  </button>
+
+                  {/* Language Option Drop Down List */}
+                  <ul className="dropdown-menu" aria-labelledby="languageDropDownButton">
+                    <span className={classes.arrowPoint}></span>
+
+                    {/* ENGLISH */}
+                    <li>
+                      <button 
+                        onClick={() => handleLanguage("EN")}
+                        className="dropdown-item radio-btn txt"
+                      >
+                        <input 
+                          checked={selectedLanguage === "EN"}
+                          onChange={() => handleLanguage("EN")}
+                          type="radio" 
+                        />
+                        <span className="checkmark">
+                          English - EN
+                        </span>
+                      </button>
+                      <hr />
+                    </li>
+
+                    {/* AMHARIC */}
+                    <li>
+                      <button 
+                        onClick={() => handleLanguage("AM")}
+                        className="dropdown-item radio-btn txt"
+                      >
+                        <input 
+                          checked={selectedLanguage === "AM"}
+                          onChange={() => handleLanguage("AM")}
+                          type="radio" 
+                        />
+                        <span className="checkmark">
+                          Amharic - AM
+                        </span>
+                      </button>
+                    </li>
+
+                    {/* Learn More */}
+                    <div className={classes.learnMore}>
+                      {t("learnMore")}
+                    </div>
+                    <hr />
+
+                    {/* Language List Country Flag */}
+                    <div className={classes.region}>
+                      {t("region")}
+                    </div>
+                  </ul>
                 </div>
-                <div className={classes.userInfoBox}>
-                  <span className={classes.deliverTo}>{t("header.deliverTo")}
-                  <p style={{fontWeight:"bold", paddingRight:"4px"}}>{user?.email?.split("@")[0]}</p></span>
-                  <span className={classes.deliveryLocation}>
-                    {location}
+              </div>
+            </div>
+
+            {/* Account */}
+            <Link to={!user && "/auth"}>
+              <div className={classes.accountContainer}>
+                {user ? (
+                  <>
+                    <span className={classes.blockOne}>
+                      Hello, {user?.email?.split("@")[0]}
+                    </span>
+                    <span 
+                      onClick={() => auth.signOut()}
+                      className={classes.blockTwo}
+                    >
+                      Sign Out
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className={classes.blockOne}>
+                      {t("header.greeting")}
+                    </span>
+                    <span className={classes.blockTwo}>
+                      {t("header.accountLists")}
+                    </span>
+                  </>
+                )}
+              </div>
+            </Link>
+
+            {/* Order */}
+            <Link to="/orders">
+              <div className={classes.ordersContainer}>
+                <span className={classes.blockOne}>
+                  {t("header.returns")}
+                </span>
+                <span className={classes.blockTwo}>
+                  {t("header.orders")}
+                </span>
+              </div>
+            </Link>
+
+            {/* Cart */}
+            <Link to="/cart">
+              <div className={classes.cartContainer}>
+                <div className={classes.cartContent}>
+                  <span className={classes.cartCount}>
+                    {totalItem}
+                  </span>
+                  <span className={classes.cartIcon}></span>
+                </div>
+                <div className={classes.cartTextContainer}>
+                  <span className={classes.cartText}>
+                    {t("header.cart")}
                   </span>
                 </div>
-            </div>
-          </div>
-
-          {/* search BAR */}
-          <div className={classes.searchBar} style={{boxShadow:boxShadow}}>
-          <div class="dropdown categories-dropDown">
-          <button 
-          class="btn  dropdown-toggle" 
-          type="button" 
-          data-bs-toggle="dropdown" 
-          aria-expanded="false">
-            {selectedItem} &nbsp;
-          </button>
-  <ul class="dropdown-menu">
-      <li>
-        <a class="dropdown-item" href="#" onClick={()=>handleDropDownClick("All")}>
-          All
-        </a> 
-      </li>
-      <li>
-        <a class="dropdown-item" href="#" onClick={()=>handleDropDownClick("Alexa ")}>
-          {t("header.Alexa")}
-        </a>
-      </li>
-      <li> 
-        <a class="dropdown-item" href="#" onClick={()=>handleDropDownClick("Amazon Clinic")}>
-          {t("header.Amazon Clinic")}
-        </a> 
-      </li>
-      <li>
-        <a class="dropdown-item" href="#" onClick={()=>handleDropDownClick("Amazon Devices")}>
-          {t("header.amazonDevices")}
-        </a> 
-      </li>
-      <li>
-        <a class="dropdown-item" href="#" onClick={()=>handleDropDownClick("Beauty & Personal Care")}>
-          {t("header.Beauty & Personal Care")}
-        </a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#" onClick={()=>handleDropDownClick("Clothing")}>
-          {t("header.Clothing")}
-        </a>
-      </li>
-  </ul>
-</div>
-{/* search bar input */}
-            <input 
-            className={classes.searchInput}
-             type="text"
-              name='id'
-               placeholder='Search Amazon'
-               onClick={handleClick}
-               ref={inputRef}/>
-            <BsSearch size={40} />
-            
-          </div>
-          {/* rightSection */}
-     <div className={classes.rightSection}>
-      {/* Language container */}
-          <div className="LanguageContainer">
-                <div className="languageDropDown">
-                   <div className="language-dropDown language">
-                       <button className='btn dropdown-toggle languageBtn' type='button' aria-expanded = "false">
-                         <img 
-                         className={classes.flagImg}
-                         src={flag} alt="flag" />
-                         <span className={classes.languageCode}>{selectedLanguage}</span>
-                       </button>
-                       {/* language option drop down list */}
-                       <ul className='dropdown-menu' aria-labelledby='languageDropDownButton'>
-                        <span className={classes.arrowPoint}></span>
-                        {/* ENGLISH */}
-                      <li>
-                        <button 
-                        onClick={()=>{
-                          handleLanguage("EN")
-                        }}
-                        className='dropdown-item radio-btn txt'>
-                          <input 
-                          checked={selectedLanguage === "EN"}
-                          onChange={()=>handleLanguage("EN")}
-                          type="radio"/>
-                            <span className='checkmark'>
-                              English - EN
-                            </span>
-                        </button>
-                      <hr />
-                      </li>
-                      {/* AMHARIC */}
-                      <li>
-                        <button
-                         onClick={()=>{
-                          handleLanguage("AM")
-                        }}
-                         className='dropdown-item radio-btn txt'>
-                          <input 
-                          checked={selectedLanguage === "AM"}
-                          onChange={()=>handleLanguage("AM")}
-                          type="radio" />
-                            <span className='checkmark'>
-                              Amharic - AM
-                            </span>
-                        </button>
-                      </li>
-                      {/* espain */}
-                      <li>
-                        <button
-                         onClick={()=>{
-                          handleLanguage("AM")
-                        }}
-                         className='dropdown-item radio-btn txt'>
-                          <input 
-                          checked={selectedLanguage === "AM"}
-                          onChange={()=>handleLanguage("AM")}
-                          type="radio" />
-                            <span className='checkmark'>
-                              Amharic - AM
-                            </span>
-                        </button>
-                      </li>
-                      
-                      
-                        <div className={classes.learnMore}>
-                          {t("learnMore")}
-                        </div>
-                        <hr />
-
-                        {/* language list country flag */}
-                        <div className={classes.region}>
-                          {/* <img src={flag} alt="" className={classes.regionalFlag} /> */}
-                          {t("region")}
-                        </div>
-                    </ul>
-                </div>
-            </div>
-         </div>
-            {/* account */}
-            <Link to={!user &&"/auth"}>
-              <div className={classes.accountContainer}>
-                {
-                  user?(
-                    <>
-                     <span className={classes.blockOne}>Hello,{user?.email?.split("@")[0]}</span>
-            <span 
-             onClick={()=>auth.signOut()}
-            className={classes.blockTwo}> Sign Out</span>
-                    </>
-                  ) : (
-                    <>
-                    <span className={classes.blockOne}>{t("header.greeting")}</span>
-            <span className={classes.blockTwo}> {t("header.accountLists")}</span>
-                    </>
-                  )
-                }
-           
-          </div>
+              </div>
             </Link>
-          {/* order */}
-
-          <Link to = "/orders">
-            <div className={classes.ordersContainer}>
-          <span className={classes.blockOne}>{t("header.returns")}</span>
-            <span className={classes.blockTwo}>{t("header.orders")}</span>
           </div>
-          </Link>
-
-          
-          {/* cart */}
-
-         <Link to ="/cart">
-          <div className={classes.cartContainer}>
-            <div className={classes.cartContent}>
-              <span className={classes.cartCount}>{totalItem}</span>
-              <span className={classes.cartIcon}>
-              </span>
-            </div>
-            <div className={classes.cartTextContainer}>
-              <span className={classes.cartText}>{t("header.cart")}</span>
-            </div>
         </div>
-         </Link>
-        
+      </nav>
+    </div>
+    <LowerHeader />
+  </>
+);
 
-      </div>
-        </div>
-    </nav>
-  </div>
-  <LowerHeader/>
-    
-    </>
-  );
-};
-
+}
 export default Header1;
